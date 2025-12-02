@@ -5,7 +5,7 @@
 @push('styles')
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css" />
 <style>
     #map {
         height: 600px;
@@ -149,7 +149,7 @@
                     <strong>Location:</strong>
                     {{ $embassy->location }},
                     {{ $city->city }},
-                    {{ $province->provinces_region }}, Brunei Darussalam
+                    {{ $province->provinces_region }}, Malaysia
                 </p>
             </div>
             </div>
@@ -172,7 +172,7 @@
 @push('service')
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.js"></script>
 <script>
     const latitude = @json($embassy->latitude);
     const longitude = @json($embassy->longitude);

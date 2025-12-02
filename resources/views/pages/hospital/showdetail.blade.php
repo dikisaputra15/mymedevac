@@ -6,7 +6,7 @@
 @push('styles')
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css" />
 
 <style>
     #map {
@@ -185,7 +185,7 @@
                         <strong>Address:</strong>
                         {{ $hospital->address }},
                         {{ $city->city }},
-                        {{ $province->provinces_region }}, Brunei Darussalam
+                        {{ $province->provinces_region }}, Malaysia
                     </p>
                     <p>
                         <strong>Latitude:</strong> {{ $hospital->latitude }}
@@ -347,7 +347,7 @@
 
 @push('service')
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.js"></script>
 <script>
     const latitude = {{ $hospital->latitude }};
     const longitude = {{ $hospital->longitude }};

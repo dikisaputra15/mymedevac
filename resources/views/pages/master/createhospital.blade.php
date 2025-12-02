@@ -22,7 +22,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>District</label>
+                <label>State</label>
                 <select class="form-control" name="province_id" id="province">
                         <option value="0">-Choosse District-</option>
                     @foreach($provinces as $prov)
@@ -34,7 +34,7 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <label for="city">Mukims (sub-districts)</label>
+                <label for="city">City</label>
                 <select name="city" id="city" class="form-control">
                     <option value="">-Choose Mukims (sub-districts)-</option>
                 </select>
