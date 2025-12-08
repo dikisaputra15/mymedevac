@@ -49,7 +49,7 @@ class MasterembessyController extends Controller
      */
     public function create()
     {
-         $provinces = Provincesregion::all();
+         $provinces = Provincesregion::orderByRaw('LOWER(provinces_region) ASC')->get();
         return view('pages.master.createembessy', [
             'provinces' => $provinces
         ]);
@@ -184,7 +184,9 @@ class MasterembessyController extends Controller
 
     public function getCities($province_id)
     {
-        $cities = City::where('province_id', $province_id)->get();
+        $cities = City::where('province_id', $province_id)
+                  ->orderByRaw('LOWER(city) ASC')
+                  ->get();
         return response()->json($cities);
     }
 }
