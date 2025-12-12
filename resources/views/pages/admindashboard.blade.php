@@ -267,7 +267,7 @@
                                 <div class="hospital-item">
                                   <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
                                     <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
-                                    <small>Class A</small>
+                                    <small>Tertiary</small>
                                   </button>
                                 </div>
                               </div>
@@ -281,13 +281,13 @@
                                   <div class="hospital-item">
                                     <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
                                       <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
-                                      <small>Class B</small>
+                                      <small>Secondary</small>
                                     </button>
                                   </div>
                                   <div class="hospital-item">
                                     <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
                                       <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
-                                      <small>Class C</small>
+                                      <small>Primary</small>
                                     </button>
                                   </div>
                                 </div>
@@ -300,15 +300,9 @@
                               <div class="hospital-list">
                                 <div class="hospital-row">
                                   <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level33Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:24px; height:24px;">
-                                      <small>Class D</small>
-                                    </button>
-                                  </div>
-                                  <div class="hospital-item">
                                     <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
                                         <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
-                                        <small>PUSKESMAS</small>
+                                        <small>Clinic / Health Center</small>
                                     </button>
                                   </div>
                                 </div>
@@ -508,7 +502,7 @@
       <div class="modal-header">
          <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Public Health Center (PUSKESMAS)</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Clinic / Health Center</h5>
          </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -560,7 +554,7 @@
       <div class="modal-header">
          <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class C — District-Level Hospital</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Primary — District-Level Hospital</h5>
          </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -577,7 +571,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class B — Provincial Referral Hospital</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Secondary — Provincial Referral Hospital</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -594,7 +588,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class A — National Referral Hospital</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Tertiary — National Referral Hospital</h5>
         </div>
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -898,7 +892,7 @@
                             @endforeach
                         </select>
                         <label>Facility Level</label>
-                        ${['Class A','Class B','Class C','Class D','Public Health Center (PUSKESMAS)'].map(c => `
+                        ${['Tertiary','Secondary','Primary','Clinic / Health Center'].map(c => `
                             <label style="display:block;font-size:13px;">
                                 <input type="checkbox" name="hospitalLevel" value="${c}"> ${c}
                             </label>`).join('')}
