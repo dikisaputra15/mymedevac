@@ -78,6 +78,80 @@
         width: 48px;
         height: 48px;
     }
+
+    .classification {
+      display: flex;
+      width: 100%;
+    }
+
+    .class-column {
+      flex: 1;
+      text-align: center;
+
+    }
+    .class-column:last-child {
+      border-right: none;
+    }
+
+    .class-header {
+      font-weight: 600;
+      padding: 0.1rem 0;
+    }
+
+    /* Color bars */
+    .class-medical-classification {border: none; text-align: center;}
+    .class-airport-category {border: none;}
+    .class-advanced { border-bottom: 3px solid #0070c0; }
+    .class-intermediate { border-bottom: 3px solid #00b050; }
+    .class-basic { border-bottom: 3px solid #ffc000; }
+
+    /* Hospital layout */
+    .hospital-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    /* For side-by-side classes */
+    .hospital-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hospital-item {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .hospital-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Image inside icon box */
+    .hospital-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Airfield icons */
+    .category-item img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
 </style>
 
 @endpush
@@ -225,6 +299,61 @@
 
         <div class="col-md-6">
             <div class="card">
+
+             <div class="classification" style="flex-direction: column; width:100%;">
+                      <div class="class-header class-medical-classification">Medical Facility Classification</div>
+                      <div class="classification">
+                        <!-- Advanced -->
+                        <div class="class-column">
+                          <div class="class-header class-advanced">Advanced</div>
+                          <div class="hospital-list">
+                            <div class="hospital-item">
+                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
+                                <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
+                                <small>Tertiary</small>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Intermediate -->
+                        <div class="class-column">
+                          <div class="class-header class-intermediate">Intermediate</div>
+                          <div class="hospital-list">
+                            <div class="hospital-row">
+                              <div class="hospital-item">
+                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
+                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
+                                  <small>Secondary</small>
+                                </button>
+                              </div>
+                              <div class="hospital-item">
+                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
+                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
+                                  <small>Primary</small>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Basic -->
+                        <div class="class-column">
+                          <div class="class-header class-basic">Basic</div>
+                          <div class="hospital-list">
+                            <div class="hospital-row">
+                              <div class="hospital-item">
+                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
+                                    <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
+                                    <small>Clinic / Health Center</small>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                 <div class="card-body p-0">
                     <div id="map"></div>
                 </div>
@@ -241,103 +370,66 @@
       <div class="modal-header">
          <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 1</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Clinic / Health Center</h5>
          </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p><b>Village Health Post – Aid Post (VHP)</b></p>
-        <p class="p-modal">Basic level primary health care including health promotion, health improvement, and health protection.</p>
+        <p class="p-modal text-justify">A basic healthcare facility focusing on preventive, promotive, and basic curative services. Located at the sub-district and village level, offers maternal and child health, immunization, and community health programs.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="level22Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-orange.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 2</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p><b>Community Health Post - Health Sub Center (CHP)</b></p>
-        <p class="p-modal">Primary health, ambulatory care, and short stay inpatient and maternity care at the local rural / remote community level, with a minimum of six (6) health workers to ensure safe 24-hour care and treatment.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 3</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p><b>Health Center - Rural / Urban Clinic – Urban Centers (HC-UC)</b></p>
-        <p class="p-modal">Primary health and ambulatory care in urban and rural settings, inpatient, maternity, and newborn care in major provincial urban communities.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- Class C — District-Level Hospital -->
 <div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 4</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Primary — District-Level Hospital</h5>
          </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p><b>District Hospital - Rural Health Services (DH)</b></p>
-        <p class="p-modal">Primary and secondary level clinical services and district wide public health programs.</p>
+        <p class="p-modal text-justify">Provides core specialist care in internal medicine, surgery, obstetrics, and pediatrics. Manages common medical conditions, refers complex cases to higher-level hospitals.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Class B — Provincial Referral Hospital -->
 <div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 5</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Secondary — Provincial Referral Hospital</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p><b>Provincial Hospital, Health Services and Public Health Programs (PHA)</b></p>
-        <p class="p-modal">Secondary level & specialist clinical care services, supporting primary health care, integrating public health programs, and patient referral.</p>
+        <p class="p-modal text-justify">Provides broad specialist and limited subspecialist services, functions as regional referral centers, includes ICUs, operating theaters, and diagnostic facilities.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Class A — National Referral Hospital -->
 <div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Class 6</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Tertiary — National Referral Hospital</h5>
         </div>
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p><b>National Referral Specialist Tertiary and Teaching Hospital - Health Services (NHA)</b></p>
-        <p class="p-modal">Complex tertiary level clinical services, supporting primary health care, public health programs, and a formalized patient referral arrangement.</p>
+        <p class="p-modal text-justify">Highest-level hospital providing, extensive specialist and subspecialist services supported by advanced technology and large bed capacity. Class A hospitals also often serve as teaching and research centers.</p>
       </div>
     </div>
   </div>
@@ -348,6 +440,7 @@
 @push('service')
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const latitude = {{ $hospital->latitude }};
     const longitude = {{ $hospital->longitude }};
