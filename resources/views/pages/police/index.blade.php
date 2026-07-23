@@ -158,22 +158,22 @@
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level6Modal">
                     <img src="{{ asset('images/Layer1.png') }}" style="width:15px; height:15px;">
-                    <small>Malaysia Police Force (Police HQ)</small>
+                    <small>Royal Malaysian Police Headquarters (Police HQ)</small>
                 </button>
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level5Modal">
                     <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px;">
-                    <small>Police Divisions (Land Divisions)</small>
+                    <small>State police contingent headquarters (IPK)</small>
                 </button>
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level4Modal">
                     <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px;">
-                    <small>Neighbourhood Police Centre (NPC)</small>
+                    <small>District Police Force (IPD)</small>
                 </button>
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level3Modal">
                     <img src="{{ asset('images/Layer4.png') }}" style="width:15px; height:15px;">
-                    <small>Neighbourhood Police Post (NPP)</small>
+                    <small>Township police force</small>
                 </button>
 
             </div>
@@ -203,7 +203,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
              <img src="{{ asset('images/Layer4.png') }}" style="width:15px; height:15px;">
-            <h5 class="modal-title" id="disclaimerLabel">Neighbourhood Police Post (NPP)</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Township police force</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -220,7 +220,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px;">
-            <h5 class="modal-title" id="disclaimerLabel">Neighbourhood Police Centre (NPC)</h5>
+            <h5 class="modal-title" id="disclaimerLabel">District Police Force (IPD)</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -237,7 +237,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px;">
-            <h5 class="modal-title" id="disclaimerLabel">Police Divisions (Land Divisions)</h5>
+            <h5 class="modal-title" id="disclaimerLabel">State police contingent headquarters (IPK)</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -254,7 +254,7 @@
       <div class="modal-header">
         <div class="d-flex align-items-center">
             <img src="{{ asset('images/Layer1.png') }}" style="width:15px; height:15px;">
-            <h5 class="modal-title" id="disclaimerLabel">Malaysia Police Force (Police HQ)</h5>
+            <h5 class="modal-title" id="disclaimerLabel">Royal Malaysian Police Headquarters (Police HQ)</h5>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>

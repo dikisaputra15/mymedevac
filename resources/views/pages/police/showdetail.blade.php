@@ -154,7 +154,7 @@
                     <strong>Location:</strong>
                     {{ $police->location ?? '-' }},
                     {{ $city->city }},
-                    {{ $province->provinces_region }}
+                    {{ $province->provinces_region }}, Malaysia
                 </p>
                 <p>
                     <strong>Hours of Operation:</strong> {{ $police->hrs_of_operation ?? '-' }}
