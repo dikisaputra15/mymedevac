@@ -33,9 +33,9 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label for="city">City</label>
+                <label for="city">District</label>
                 <select name="city" id="city" class="form-control">
-                    <option value="">-Choose City-</option>
+                    <option value="">-Choose District-</option>
                 </select>
             </div>
         </div>
@@ -282,7 +282,7 @@ document.querySelectorAll('.category-radio').forEach(radio => {
                 type: 'GET',
                 success: function (data) {
                     $('#city').empty();
-                    $('#city').append('<option value="">-- City --</option>');
+                    $('#city').append('<option value="">-- District --</option>');
                     $.each(data, function (key, city) {
                         $('#city').append('<option value="' + city.id + '">' + city.city + '</option>');
                     });
@@ -290,7 +290,7 @@ document.querySelectorAll('.category-radio').forEach(radio => {
             });
         } else {
             $('#city').empty();
-            $('#city').append('<option value="">-- City  --</option>');
+            $('#city').append('<option value="">-- District  --</option>');
         }
     });
 </script>

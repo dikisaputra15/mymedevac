@@ -44,7 +44,7 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <label>Edit City</label>
+                <label>Edit District</label>
                 <select class="form-control" name="city" id="city">
                     <?php
                         foreach ($cities as $city) {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'GET',
                 success: function (data) {
                     $('#city').empty();
-                    $('#city').append('<option value="">-- City --</option>');
+                    $('#city').append('<option value="">-- District --</option>');
                     $.each(data, function (key, city) {
                         $('#city').append('<option value="' + city.id + '">' + city.city + '</option>');
                     });
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             $('#city').empty();
-            $('#city').append('<option value="">-- City --</option>');
+            $('#city').append('<option value="">-- District --</option>');
         }
     });
 </script>
