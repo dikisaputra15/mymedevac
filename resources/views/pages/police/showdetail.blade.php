@@ -156,6 +156,9 @@
                     {{ $city->city }},
                     {{ $province->provinces_region }}
                 </p>
+                <p>
+                    <strong>Hours of Operation:</strong> {{ $police->hours_of_operation ?? '-' }}
+                </p>
             </div>
             </div>
         </div>
