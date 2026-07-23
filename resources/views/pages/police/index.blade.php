@@ -540,10 +540,10 @@ const FilterPanel = L.Control.extend({
                 <label>Category:</label>
 
                 ${[
-                    'Malaysia Police Force (Police HQ)',
-                    'Police Divisions (Land Divisions)',
-                    'Neighbourhood Police Centre (NPC)',
-                    'Neighbourhood Police Post (NPP)',
+                    'Royal Malaysian Police Headquarters (Police HQ)',
+                    'State police contingent headquarters (IPK)',
+                    'District Police Force (IPD)',
+                    'Township police force',
                 ].map(c => `
                 <label style="display:block;font-size:13px;margin-bottom:4px;">
                     <input type="checkbox" name="policeCategory" value="${c}">
