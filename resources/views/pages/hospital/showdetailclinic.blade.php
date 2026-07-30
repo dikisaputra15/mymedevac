@@ -324,13 +324,17 @@
                             <td>Medical</td>
                             <td>{{ $hospital->medical }}</td>
                         </tr>
+                        <tr>
+                            <td>Pediatric</td>
+                            <td>{{ $hospital->pediatric }}</td>
+                        </tr>
                     </table>
                 </div>
                 <div class="col-sm-6">
                     <table class="table table-hover clinical-service-table">
                         <tr>
-                            <td>Pediatric</td>
-                            <td>{{ $hospital->pediatric }}</td>
+                            <td>Maternal</td>
+                            <td>{{ $hospital->maternal }}</td>
                         </tr>
                         <tr>
                             <td>Dental</td>
