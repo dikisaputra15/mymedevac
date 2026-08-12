@@ -80,16 +80,20 @@
         </div>
 
         <div class="d-flex gap-2 ms-auto">
+            <a href="{{ url('embassiees') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('home') ? 'active' : '' }}">
+                <i class="bi bi-house-door-fill fs-3"></i>
+                <small>Home</small>
+            </a>
+
             <!-- Button 2 -->
             <a href="{{ url('embassiees') }}/{{$embassy->id}}/detail" class="btn btn-outline-danger d-flex flex-column align-items-center p-3 {{ request()->is('embassiees/'.$embassy->id.'/detail') ? 'active' : '' }}">
                 <img src="{{ asset('images/icon-menu-general-info.png') }}" style="width: 18px; height: 24px;">
                 <small>General</small>
             </a>
 
-            <!-- Button 5 -->
-            <a href="{{ url('airports') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('airports') ? 'active' : '' }}">
-                <i class="bi bi-airplane fs-3"></i>
-                <small>Airports</small>
+            <a href="{{ url('embassiees') }}/{{$embassy->id}}/emergency" class="btn btn-outline-danger d-flex flex-column align-items-center p-3 {{ request()->is('embassiees/'.$embassy->id.'/emergency') ? 'active' : '' }}">
+                <img src="{{ asset('images/icon-emergency-support-white.png') }}" style="width: 24px; height: 24px;">
+                <small>Emergency</small>
             </a>
 
             <a href="{{ url('aircharter') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('aircharter') ? 'active' : '' }}">
@@ -97,10 +101,16 @@
                 <small>Air Charter</small>
             </a>
 
-            <!-- Button 7 -->
+             <!-- Button 7 -->
             <a href="{{ url('hospital') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('hospital') ? 'active' : '' }}">
              <img src="{{ asset('images/icon-medical.png') }}" style="width: 24px; height: 24px;">
                 <small>Medical</small>
+            </a>
+
+            <!-- Button 5 -->
+            <a href="{{ url('airports') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('airports') ? 'active' : '' }}">
+                <i class="bi bi-airplane fs-3"></i>
+                <small>Aviation</small>
             </a>
 
             <a href="{{ url('police') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('police') ? 'active' : '' }}">
@@ -108,10 +118,6 @@
                 <small>Police</small>
             </a>
 
-            <a href="{{ url('embassiees') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('embassiees') ? 'active' : '' }}">
-            <img src="{{ asset('images/icon-embassy.png') }}" style="width: 24px; height: 24px;">
-                <small>Embassies</small>
-            </a>
         </div>
     </div>
 

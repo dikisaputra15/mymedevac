@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Airport;
 use App\Models\Hospital;
+use App\Models\Police;
+use App\Models\Embassiees;
 use App\Models\Provincesregion;
 use App\Models\City;
 use Illuminate\Support\Facades\DB;
@@ -211,9 +213,26 @@ class AirportsController extends Controller
             ->orderBy('distance')
             ->get();
 
+        // --- Ambil Kantor Polisi Terdekat ---
+        $nearbyPolices = Police::selectRaw('*, ( 6371 * acos( cos( radians(?) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin( radians( latitude ) ) ) ) AS distance', [$airport->latitude, $airport->longitude, $airport->latitude])
+            ->where('police_status', true)
+            ->having('distance', '<=', 500)
+            ->orderBy('distance')
+            ->get();
+
+        // --- Ambil Kedutaan Terdekat ---
+        $nearbyEmbassy = Embassiees::selectRaw('
+            id, name_embassiees AS name, latitude, longitude, location, telephone, fax, email, website,
+            ( 6371 * acos( cos( radians(?) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin( radians( latitude ) ) ) ) AS distance
+        ', [$airport->latitude, $airport->longitude, $airport->latitude])
+            ->where('embassy_status', true)
+            ->having('distance', '<=', 500)
+            ->orderBy('distance')
+            ->get();
+
         $radius_km = 500; // Radius lingkaran untuk ditampilkan di peta
 
-        return view('pages.airports.showdetailemergency', compact('airport', 'nearbyAirports', 'nearbyHospitals', 'radius_km', 'hospital'));
+        return view('pages.airports.showdetailemergency', compact('airport', 'nearbyAirports', 'nearbyHospitals', 'radius_km', 'hospital', 'nearbyPolices', 'nearbyEmbassy'));
     }
 
     public function showairlinesdestination($id)
