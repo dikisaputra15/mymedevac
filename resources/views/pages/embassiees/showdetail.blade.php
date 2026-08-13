@@ -136,33 +136,47 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header fw-bold"><i class="fas fa-phone"></i> Contact Information</div>
-                <div class="card-body">
-                <p>
-                    <strong>Telephone:</strong> {!! $embassy->telephone ?? '-' !!}
-                </p>
-                <p>
-                    <strong>Fax:</strong> {!! $embassy->fax ?? '-' !!}
-                </p>
-                    <strong>Email:</strong> {!! $embassy->email ?? '-' !!}
-                </p>
-                <p>
-                    <strong>Website:</strong> {!! $embassy->website !!}
-                </p>
-                <p>
-                    <strong>Latitude:</strong> {{ $embassy->latitude ?? '-' }}
-                </p>
-                <p>
-                    <strong>Longitude:</strong> {{ $embassy->longitude ?? '-' }}
-                </p>
-                <p>
-                    <strong>Location:</strong>
-                    {{ $embassy->location }},
-                    {{ $city->city }},
-                    {{ $province->provinces_region }}, Malaysia
-                </p>
+            <div class="card"> 
+                <div class="card-header fw-bold"><img src="{{ asset('images/icon-location.png') }}" style="width: 18px; height: 24px;"> Location</div>
+                <div class="card-body overflow-auto">
+                    <p>
+                        <strong>Address:</strong>
+                        {{ $embassy->location }},
+                        {{ $city->city }},
+                        {{ $province->provinces_region }}, Malaysia
+                    </p>
+                    <p>
+                        <strong>Latitude:</strong> {{ $embassy->latitude }}
+                    </p>
+                    <p>
+                        <strong>Longitude:</strong> {{ $embassy->longitude }}
+                    </p>
+                </div>
             </div>
+
+             <div class="card">
+                <div class="card-header fw-bold"><img src="{{ asset('images/contact-icon.png') }}" style="width: 24px; height: 24px;"> Contact Details</div>
+                <div class="card-body overflow-auto">
+                    <p>
+                        <strong>Telephone:</strong> <?php echo $embassy->telephone; ?>
+                    </p>
+                    <p>
+                        <strong>Fax:</strong> <?php echo $embassy->fax; ?>
+                    </p>
+                    <p>
+                        <strong>Email:</strong> <?php echo $embassy->email; ?>
+                    </p>
+                    <p>
+                        <strong>Website:</strong> <?php echo $embassy->website; ?>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header fw-bold"><img src="{{ asset('images/icon-nearest-accomodation.png') }}" style="width: 24px; height: 18px;"> Accommodation Search</div>
+                <div class="card-body overflow-auto">
+                    <?php echo $embassy->nearest_accommodation; ?>
+                </div>
             </div>
         </div>
         <div class="col-md-8">
