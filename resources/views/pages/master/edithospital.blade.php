@@ -905,11 +905,30 @@
           </div>
         </div>
 
+         <div class="col-md-12">
+          <div class="card card-outline card-info">
+            <div class="card-header">
+              <h3 class="card-title">
+                 Edit Emergency Hotline
+              </h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+
+                <textarea id="summernote12" name="travel_agent">
+                    <?php echo $hospital->travel_agent; ?>
+                </textarea>
+
+            </div>
+
+          </div>
+        </div>
+
         <div class="col-md-12">
           <div class="card card-outline card-info">
             <div class="card-header">
               <h3 class="card-title">
-                Edit Medical Support Website
+                Edit Emergency Medical Support
               </h3>
             </div>
             <!-- /.card-header -->
@@ -955,25 +974,6 @@
 
                 <textarea id="summernote2" name="nearest_airfield">
                     <?php echo $hospital->nearest_airfield; ?>
-                </textarea>
-
-            </div>
-
-          </div>
-        </div>
-
-          <div class="col-md-12">
-          <div class="card card-outline card-info">
-            <div class="card-header">
-              <h3 class="card-title">
-                Edit Travel Agent
-              </h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-
-                <textarea id="summernote12" name="travel_agent">
-                    <?php echo $hospital->travel_agent; ?>
                 </textarea>
 
             </div>
