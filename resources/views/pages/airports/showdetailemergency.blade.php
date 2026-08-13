@@ -150,6 +150,62 @@
       object-fit: contain;
     }
 
+    /* ===== Legend grid ===== */
+    .legend-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        width: 100%;
+        align-items: start;
+    }
+
+    /* Police classification: 2 kolom (2 di atas, 2 di bawah).
+       Label dibiarkan satu baris (tidak turun ke bawah); font sedikit
+       dikecilkan supaya bloknya tidak terlalu melebar. */
+    .legend-grid-2 {
+        grid-template-columns: repeat(2, max-content);
+        column-gap: 8px;
+        row-gap: 2px;
+        width: auto;
+    }
+
+    .legend-grid-2 .legend-grid-item {
+        white-space: nowrap;
+        align-items: center;
+    }
+
+    .legend-grid-2 .legend-grid-item small {
+        font-size: 11px;
+    }
+
+    /* Airfield classification: 3 kolom (3 di atas, 3 di bawah), rapat & rata kiri */
+    .legend-grid-3 {
+        grid-template-columns: repeat(3, max-content);
+        column-gap: 2px;
+        width: auto;
+    }
+
+    .legend-grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        width: 100%;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    /* Ikon tanpa ukuran inline (police) diseragamkan 12px */
+    .legend-grid-item img {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+    }
+
+    .legend-grid-item small {
+        text-align: left;
+    }
+
     /* ====== DIRECTIONS PANEL - Modern Styling ====== */
     #directionsPanel {
         font-family: 'Segoe UI', Roboto, -apple-system, sans-serif !important;
@@ -395,109 +451,139 @@
             <div class="card">
                 <div class="card-header fw-bold"><img src="{{ asset('images/icon-emergency-support.png') }}" style="width: 24px; height: 24px;"> Emergency Support Tools</div>
 
-                <div class="classification">
-                    <!-- Airfield Classification -->
-                    <div class="classification" style="margin-right: 30px; width: 30%;">
+                 <div class="d-flex p-3" style="justify-content: center;">
+                <div class="d-flex gap-2" style="display: grid; grid-template-columns: auto auto auto; justify-content: space-between; column-gap: 16px; row-gap: 10px; align-items: start; width: 100%;">
+
                       <!-- Airport -->
-                      <div class="class-column">
-                        <div class="class-header class-airport-category">Airfield Classification</div>
-                        <div class="hospital-list">
-                          <div class="hospital-row" style="flex-direction: column;">
-                            <!-- Airport row 1 -->
-                            <div class="hospital-item">
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level6Modal">
+                      <div class="class-column" style="justify-self: start;">
+
+                        <div class="airport-list" style="align-items:start;">
+
+                          <div class="class-header class-airport-category" style="text-align:left;">Airfield Classification</div>
+                          <div class="hospital-row legend-grid legend-grid-3">
+
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level6Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/International-Airport.png" style="width:18px; height:18px;">
                                   <small>International</small>
                               </button>
 
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level5Modal">
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level5Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/regional-airport.png" style="width:18px; height:18px;">
                                   <small>Domestic</small>
                               </button>
 
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level4Modal">
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level4Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/regional-domestic-airport.png" style="width:18px; height:18px;">
                                   <small>Regional</small>
                               </button>
-                            </div>
-                            <!-- Airport row 2 -->
-                            <div class="hospital-item">
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level2Modal">
+
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level2Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/civil-military-airport.png" style="width:18px; height:18px;">
                                   <small>Civil-Military</small>
                               </button>
 
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level3Modal">
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level3Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/military-airport-red.png" style="width:18px; height:18px;">
                                   <small>Military</small>
                               </button>
 
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level1Modal">
+                              <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#level1Modal">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/private-airport.png" style="width:18px; height:18px;">
                                   <small>Private</small>
                               </button>
-                            </div>
+
                           </div>
 
                         </div>
                       </div>
-                    </div>
 
-                    <!-- Hospital Classification -->
-                    <div class="classification" style="flex-direction: column; width:100%;">
-                      <div class="class-header class-medical-classification">Medical Facility Classification</div>
-                      <div class="classification">
-                        <!-- Advanced -->
-                        <div class="class-column">
-                          <div class="class-header class-advanced">Advanced</div>
-                          <div class="hospital-list">
-                            <div class="hospital-item">
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
-                                <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
-                                <small>Tertiary</small>
-                              </button>
-                            </div>
-                          </div>
+                      <!-- Medical Facility Legend -->
+                      <div style="justify-self: start; flex-direction: column;">
+                        <!-- Title -->
+                        <div>
+                            <div class="class-header class-medical-classification">Medical Facility Classification</div>
                         </div>
-
-                        <!-- Intermediate -->
-                        <div class="class-column">
-                          <div class="class-header class-intermediate">Intermediate</div>
-                          <div class="hospital-list">
-                            <div class="hospital-row">
-                              <div class="hospital-item">
-                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
-                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
-                                  <small>Secondary</small>
-                                </button>
-                              </div>
-                              <div class="hospital-item">
-                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
-                                  <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
-                                  <small>Primary</small>
-                                </button>
+                        <div style="display: flex; flex-direction: row;">
+                            <!-- Advanced -->
+                            <div class="class-column">
+                              <div class="class-header class-advanced">Advanced</div>
+                              <div class="hospital-list">
+                                <div class="hospital-item">
+                                  <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
+                                    <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
+                                    <small>Tertiary</small>
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
 
-                        <!-- Basic -->
-                        <div class="class-column">
-                          <div class="class-header class-basic">Basic</div>
-                          <div class="hospital-list">
-                            <div class="hospital-row">
-                              <div class="hospital-item">
-                                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
-                                    <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
-                                    <small>Clinic / Health Center</small>
-                                </button>
+                            <!-- Intermediate -->
+                            <div class="class-column">
+                              <div class="class-header class-intermediate">Intermediate</div>
+                              <div class="hospital-list">
+                                <div class="hospital-row">
+                                  <div class="hospital-item">
+                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
+                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
+                                      <small>Secondary</small>
+                                    </button>
+                                  </div>
+                                  <div class="hospital-item">
+                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
+                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
+                                      <small>Primary</small>
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
+
+                            <!-- Basic -->
+                            <div class="class-column">
+                              <div class="class-header class-basic">Basic</div>
+                              <div class="hospital-list">
+                                <div class="hospital-row">
+                                  <div class="hospital-item">
+                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
+                                        <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
+                                        <small>Clinic / Health Center</small>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+
+                      <!-- Police Legend -->
+                      <div class="class-column" style="justify-self: end;">
+                        <div class="class-header class-airport-category" style="text-align:left;">Police Classification</div>
+                        <div class="hospital-row legend-grid legend-grid-2">
+
+                            <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#police4Modal">
+                                <img src="{{ asset('images/Layer1.png') }}" alt="Police HQ">
+                                <small>Royal Malaysian Police Headquarters (Police HQ)</small>
+                            </button>
+
+                            <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#police3Modal">
+                                <img src="{{ asset('images/Layer2.png') }}" alt="State police contingent headquarters">
+                                <small>State police contingent headquarters (IPK)</small>
+                            </button>
+
+                            <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#police2Modal">
+                                <img src="{{ asset('images/Layer3.png') }}" alt="District Police Force">
+                                <small>District Police Force (IPD)</small>
+                            </button>
+
+                            <button class="btn p-1 legend-grid-item" data-bs-toggle="modal" data-bs-target="#police1Modal">
+                                <img src="{{ asset('images/Layer4.png') }}" alt="Township police force">
+                                <small>Township police force</small>
+                            </button>
+
+                        </div>
+                      </div>
+                </div>
+            </div>
 
                 <div class="card-body p-0">
                     <div id="map"></div>
@@ -747,6 +833,76 @@
       </div>
       <div class="modal-body">
         <p class="p-modal">Highest-level hospital providing, extensive specialist and subspecialist services supported by advanced technology and large bed capacity. Class A hospitals also often serve as teaching and research centers.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Police Classification Modals ===== -->
+
+<div class="modal fade" id="police1Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+            <img src="{{ asset('images/Layer4.png') }}" style="width:15px; height:15px;">
+            <h5 class="modal-title" id="disclaimerLabel">Township police force</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="police2Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+            <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px;">
+            <h5 class="modal-title" id="disclaimerLabel">District Police Force (IPD)</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="police3Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+            <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px;">
+            <h5 class="modal-title" id="disclaimerLabel">State police contingent headquarters (IPK)</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="police4Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+            <img src="{{ asset('images/Layer1.png') }}" style="width:15px; height:15px;">
+            <h5 class="modal-title" id="disclaimerLabel">Royal Malaysian Police Headquarters (Police HQ)</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
       </div>
     </div>
   </div>
