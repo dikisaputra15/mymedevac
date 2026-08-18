@@ -120,15 +120,15 @@
                 <label>Edit Police Classification (Country)</label><br>
 
                 <input type="hidden" name="icon" id="icon" value="{{ $police->icon }}">
-               <div class="form-check form-check-inline police-option {{ $police->category == 'Royal Malaysian Police Headquarters (Police HQ)' ? 'selected' : '' }}">
+               <div class="form-check form-check-inline police-option {{ $police->category == 'National Police HQ' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Royal Malaysian Police Headquarters (Police HQ)"
+                        value="National Police HQ"
                         data-icon="{{ asset('images/Layer1.png') }}"
-                        {{ $police->category == 'Royal Malaysian Police Headquarters (Police HQ)' ? 'checked' : '' }}>
+                        {{ $police->category == 'National Police HQ' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer1.png') }}" width="16">
-                    <label>Royal Malaysian Police Headquarters (Police HQ)</label>
+                    <label>National Police HQ</label>
                 </div>
 
                 <div class="form-check form-check-inline police-option {{ $police->category == 'State police contingent headquarters (IPK)' ? 'selected' : '' }}">
@@ -153,15 +153,15 @@
                     <label>District Police Force (IPD)</label>
                 </div>
 
-                <div class="form-check form-check-inline police-option {{ $police->category == 'Township police force' ? 'selected' : '' }}">
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Police Station' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Township police force"
+                        value="Police Station"
                         data-icon="{{ asset('images/Layer4.png') }}"
-                        {{ $police->category == 'Township police force' ? 'checked' : '' }}>
+                        {{ $police->category == 'Police Station' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer4.png') }}" width="16">
-                    <label>Township police force</label>
+                    <label>Police Station</label>
                 </div>
             </div>
         </div>

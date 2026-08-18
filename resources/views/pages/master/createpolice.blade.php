@@ -93,9 +93,9 @@
 
                 <input type="hidden" name="icon" id="icon">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input category-radio" type="radio" name="category" value="Royal Malaysian Police Headquarters (Police HQ)" data-icon="{{ asset('images/Layer1.png') }}">
+                    <input class="form-check-input category-radio" type="radio" name="category" value="National Police HQ" data-icon="{{ asset('images/Layer1.png') }}">
                     <img src="{{ asset('images/Layer1.png') }}" style="width:12px; height:12px;">
-                    <label class="form-check-label">Royal Malaysian Police Headquarters (Police HQ)</label>
+                    <label class="form-check-label">National Police HQ</label>
                 </div>
 
                  <div class="form-check form-check-inline">
@@ -111,9 +111,9 @@
                 </div>
 
                  <div class="form-check form-check-inline">
-                    <input class="form-check-input category-radio" type="radio" name="category" value="Township police force" data-icon="{{ asset('images/Layer4.png') }}">
+                    <input class="form-check-input category-radio" type="radio" name="category" value="Police Station" data-icon="{{ asset('images/Layer4.png') }}">
                     <img src="{{ asset('images/Layer4.png') }}" style="width:12px; height:12px;">
-                    <label class="form-check-label">Township police force</label>
+                    <label class="form-check-label">Police Station</label>
                 </div>
             </div>
         </div>
