@@ -249,6 +249,50 @@
         text-align: left;
     }
 
+    /* Tab modal legend mengikuti tampilan dashboard-ref */
+    .info-modal-tabs {
+        background: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+        flex: 0 0 auto;
+        flex-wrap: nowrap;
+        gap: 2px;
+        overflow-x: auto;
+    }
+
+    .info-modal-tabs .nav-link {
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        color: #55606e;
+        font-size: 13px !important;
+        font-weight: 600;
+        padding: 8px 14px !important;
+        white-space: nowrap;
+    }
+
+    .info-modal-tabs .nav-link:hover {
+        background: #eef2f7;
+        color: #395272;
+    }
+
+    .info-modal-tabs .nav-link.active {
+        background: #fff;
+        color: #395272;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+    .police-modal-dialog {
+        width: calc(100vw - 2rem);
+        max-width: 1280px;
+    }
+
+    @media (max-width: 1199.98px) {
+        .info-modal-tabs {
+            flex-wrap: wrap;
+            overflow-x: hidden;
+        }
+    }
+
     /* Facilities checkbox list (filter panel) */
     .facility-title {
         display: block;
@@ -758,7 +802,7 @@
 </div>
 
 <div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="level11ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -877,7 +921,7 @@
 </div>
 
 <div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -894,7 +938,7 @@
 </div>
 
 <div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="level44ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -1002,7 +1046,7 @@
 </div>
 
 <div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="level55ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1087,7 +1131,7 @@
 </div>
 
 <div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="level66ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1179,7 +1223,7 @@
 <!-- ===== Police Classification Modals ===== -->
 
 <div class="modal fade" id="police1Modal" tabindex="-1" aria-labelledby="police1ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 1050px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1189,7 +1233,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap w-100" id="police1Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police1Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police1-definition-tab" data-bs-toggle="tab" data-bs-target="#police1-definition" type="button" role="tab" aria-controls="police1-definition" aria-selected="true" style="font-size: 12px;">Definition &amp; Purpose</button>
           </li>
@@ -1342,7 +1386,7 @@
 </div>
 
 <div class="modal fade" id="police2Modal" tabindex="-1" aria-labelledby="police2ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 850px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1352,7 +1396,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap w-100" id="police2Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police2Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police2-definition-tab" data-bs-toggle="tab" data-bs-target="#police2-definition" type="button" role="tab" aria-controls="police2-definition" aria-selected="true" style="font-size: 12px;">Definition &amp; Purpose</button>
           </li>
@@ -1475,7 +1519,7 @@
 </div>
 
 <div class="modal fade" id="police3Modal" tabindex="-1" aria-labelledby="police3ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1485,7 +1529,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap overflow-auto" id="police3Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police3Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap" id="police3-definition-tab" data-bs-toggle="tab" data-bs-target="#police3-definition" type="button" role="tab" aria-controls="police3-definition" aria-selected="true">Definition &amp; Purpose</button>
           </li>
@@ -1634,7 +1678,7 @@
 </div>
 
 <div class="modal fade" id="police4Modal" tabindex="-1" aria-labelledby="police4ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 1050px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1644,7 +1688,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap" id="police4Tabs" role="tablist" style="font-size: 13px;">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police4Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police4-definition-tab" data-bs-toggle="tab" data-bs-target="#police4-definition" type="button" role="tab" aria-controls="police4-definition" aria-selected="true">Definition &amp; Purpose</button>
           </li>
