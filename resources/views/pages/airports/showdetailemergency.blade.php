@@ -40,6 +40,11 @@
         color: #fff !important;
     }
 
+    .p-1{
+        padding: 0 3px !important;
+        margin: 0 3px;
+    }
+
     .p-3{
         padding: 10px !important;
         margin: 0 3px;
@@ -96,11 +101,18 @@
     }
 
     /* Color bars */
-    .class-medical-classification {border: none; text-align: center;}
+    .class-medical-classification {border: none; text-align: left;}
     .class-airport-category {border: none;}
     .class-advanced { border-bottom: 3px solid #0070c0; }
     .class-intermediate { border-bottom: 3px solid #00b050; }
     .class-basic { border-bottom: 3px solid #ffc000; }
+
+    /* Airfield layout */
+    .airport-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     /* Hospital layout */
     .hospital-list {
