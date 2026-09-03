@@ -2,7 +2,7 @@
 
 @section('title', 'Dashboard')
 
-@section('page-title', 'Papua New Guinea Crisis Management Tools')
+@section('page-title', 'Malaysia Crisis Management Tools')
 
 @push('styles')
 
@@ -249,6 +249,135 @@
         text-align: left;
     }
 
+    /* Dashboard legend bar */
+    .dashboard-legend-bar {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 12px 16px;
+        background-color: #dfeaf1;
+    }
+
+    .dashboard-legend-groups {
+        display: grid;
+        grid-template-columns: max-content max-content minmax(360px, 1fr);
+        align-items: start;
+        gap: 18px 32px;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .dashboard-legend-group {
+        min-width: 0;
+    }
+
+    .dashboard-legend-group .class-header {
+        margin-bottom: 3px;
+        text-align: left;
+    }
+
+    .dashboard-medical-columns {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+    }
+
+    .dashboard-legend-actions {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .dashboard-legend-actions .btn {
+        min-width: 62px;
+    }
+
+    @media (max-width: 1450px) {
+        .dashboard-legend-groups {
+            grid-template-columns: max-content max-content;
+        }
+
+        .dashboard-legend-group-police {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .dashboard-legend-bar {
+            flex-direction: column;
+        }
+
+        .dashboard-legend-groups {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        .dashboard-legend-group-police {
+            grid-column: auto;
+        }
+
+        .dashboard-legend-actions {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .legend-grid-2,
+        .legend-grid-3,
+        .dashboard-medical-columns {
+            grid-template-columns: 1fr;
+        }
+
+        .dashboard-legend-actions {
+            flex-wrap: wrap;
+        }
+    }
+
+    /* Tab modal legend mengikuti tampilan dashboard-ref */
+    .info-modal-tabs {
+        background: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+        flex: 0 0 auto;
+        flex-wrap: nowrap;
+        gap: 2px;
+        overflow-x: auto;
+    }
+
+    .info-modal-tabs .nav-link {
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        color: #55606e;
+        font-size: 13px !important;
+        font-weight: 600;
+        padding: 8px 14px !important;
+        white-space: nowrap;
+    }
+
+    .info-modal-tabs .nav-link:hover {
+        background: #eef2f7;
+        color: #395272;
+    }
+
+    .info-modal-tabs .nav-link.active {
+        background: #fff;
+        color: #395272;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+    .police-modal-dialog {
+        width: calc(100vw - 2rem);
+        max-width: 1280px;
+    }
+
+    @media (max-width: 1199.98px) {
+        .info-modal-tabs {
+            flex-wrap: wrap;
+            overflow-x: hidden;
+        }
+    }
+
     /* Facilities checkbox list (filter panel) */
     .facility-title {
         display: block;
@@ -425,13 +554,11 @@
 @section('conten')
 
 <div class="card">
-    <div class="row" style="background-color: #dfeaf1;">
-        <div class="col-md-9">
-            <div class="d-flex p-3" style="justify-content: center;">
-                <div class="d-flex gap-2" style="flex-wrap: wrap; width: 100%; justify-content: space-between; column-gap: 45px; row-gap: 12px;">
+    <div class="dashboard-legend-bar">
+        <div class="dashboard-legend-groups">
 
                       <!-- Airport -->
-                      <div class="class-column" style="flex: 0 0 auto;">
+                      <div class="class-column dashboard-legend-group">
 
                         <div class="airport-list" style="align-items:start;">
 
@@ -474,12 +601,12 @@
                       </div>
 
                       <!-- Medical Facility Legend -->
-                      <div style="flex: 0 0 auto; flex-direction: column;">
+                      <div class="dashboard-legend-group">
                         <!-- Title -->
                         <div>
                             <div class="class-header class-medical-classification">Medical Facility Classification</div>
                         </div>
-                        <div style="display: flex; flex-direction: row;">
+                        <div class="dashboard-medical-columns">
                             <!-- Advanced -->
                             <div class="class-column">
                               <div class="class-header class-advanced">Advanced</div>
@@ -532,7 +659,7 @@
                       </div>
 
                       <!-- Police Legend -->
-                      <div class="class-column" style="flex: 0 0 auto;">
+                      <div class="class-column dashboard-legend-group dashboard-legend-group-police">
                         <div class="class-header class-airport-category" style="text-align:left;">Police Classification</div>
                         <div class="hospital-row legend-grid legend-grid-2">
 
@@ -558,12 +685,8 @@
 
                         </div>
                       </div>
-                </div>
-            </div>
         </div>
-         <div class="col-md-3">
-            <div class="d-flex justify-content-end p-3">
-                <div class="d-flex gap-2 mt-2">
+        <div class="dashboard-legend-actions">
 
                     <a href="{{ url('airports') }}" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('airports') ? 'active' : '' }}">
                         <i class="bi bi-airplane fs-3"></i>
@@ -584,8 +707,6 @@
                     <img src="{{ asset('images/icon-embassy.png') }}" style="width: 24px; height: 24px;">
                         <small>Embassies</small>
                     </a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -758,7 +879,7 @@
 </div>
 
 <div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="level11ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -877,7 +998,7 @@
 </div>
 
 <div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -894,7 +1015,7 @@
 </div>
 
 <div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="level44ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -1002,7 +1123,7 @@
 </div>
 
 <div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="level55ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1087,7 +1208,7 @@
 </div>
 
 <div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="level66ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1179,7 +1300,7 @@
 <!-- ===== Police Classification Modals ===== -->
 
 <div class="modal fade" id="police1Modal" tabindex="-1" aria-labelledby="police1ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 1050px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1189,7 +1310,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap w-100" id="police1Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police1Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police1-definition-tab" data-bs-toggle="tab" data-bs-target="#police1-definition" type="button" role="tab" aria-controls="police1-definition" aria-selected="true" style="font-size: 12px;">Definition &amp; Purpose</button>
           </li>
@@ -1342,7 +1463,7 @@
 </div>
 
 <div class="modal fade" id="police2Modal" tabindex="-1" aria-labelledby="police2ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 850px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1352,7 +1473,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap w-100" id="police2Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police2Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police2-definition-tab" data-bs-toggle="tab" data-bs-target="#police2-definition" type="button" role="tab" aria-controls="police2-definition" aria-selected="true" style="font-size: 12px;">Definition &amp; Purpose</button>
           </li>
@@ -1475,7 +1596,7 @@
 </div>
 
 <div class="modal fade" id="police3Modal" tabindex="-1" aria-labelledby="police3ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1485,7 +1606,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap overflow-auto" id="police3Tabs" role="tablist">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police3Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap" id="police3-definition-tab" data-bs-toggle="tab" data-bs-target="#police3-definition" type="button" role="tab" aria-controls="police3-definition" aria-selected="true">Definition &amp; Purpose</button>
           </li>
@@ -1634,7 +1755,7 @@
 </div>
 
 <div class="modal fade" id="police4Modal" tabindex="-1" aria-labelledby="police4ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="width: calc(100vw - 2rem); max-width: 1050px;">
+  <div class="modal-dialog police-modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1644,7 +1765,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs flex-nowrap" id="police4Tabs" role="tablist" style="font-size: 13px;">
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="police4Tabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active text-nowrap px-2" id="police4-definition-tab" data-bs-toggle="tab" data-bs-target="#police4-definition" type="button" role="tab" aria-controls="police4-definition" aria-selected="true">Definition &amp; Purpose</button>
           </li>

@@ -24,7 +24,7 @@ class EmbassieesFactory extends Factory
             'fax' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
             'website' => $this->faker->url,
-            'latitude' => $this->faker->latitude(-11.0, -1.0), // Papua New Guinea
+            'latitude' => $this->faker->latitude(-11.0, -1.0), // Malaysia
             'longitude' => $this->faker->longitude(140.0, 155.0),
             'image' => $this->faker->randomElement([
                 'https://pg.concordreview.com/wp-content/uploads/2025/01/Autralia-Consulate-Lea.jpg',

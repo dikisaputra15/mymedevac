@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title','More Details')
-@section('page-title', 'Papua New Guinea Airports')
+@section('page-title', 'Malaysia Airports')
 
 @push('styles')
 
@@ -2222,7 +2222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div id="hospitalFilter" style="display:none;">
                 <strong>Facility Level:</strong><br>
-                ${['Tertiary','Secondary','Clinic / Health Center']
+                ${['Tertiary','Secondary','Primary','Clinic / Health Center']
                     .map(lvl => `<label style="display:block;font-size:13px;">
                         <input type="checkbox" name="hospitalLevel" value="${lvl}"> ${lvl}
                     </label>`).join('')}
@@ -2239,10 +2239,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div id="policeFilter" style="display:none;margin-top:8px;">
                 <strong>Police Category:</strong><br>
                 ${[
-                    'Royal Brunei Police Force (Police HQ)',
-                    'District Police Command',
-                    'Police Station',
-                    'Police Post'
+                    'National Police HQ',
+                    'State police contingent headquarters (IPK)',
+                    'District Police Force (IPD)',
+                    'Police Station'
                 ].map(cat => `
                     <label style="display:block;font-size:13px;">
                         <input type="checkbox" name="policeCategory" value="${cat}"> ${cat}

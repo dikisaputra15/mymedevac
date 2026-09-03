@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title','More Details')
-@section('page-title', 'Papua New Guinea Airports')
+@section('page-title', 'Malaysia Airports')
 
 @push('styles')
 

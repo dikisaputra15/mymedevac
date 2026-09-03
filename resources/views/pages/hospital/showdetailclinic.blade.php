@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title','Detail Clinic')
-@section('page-title', 'Papua New Guinea Medical Facility')
+@section('page-title', 'Malaysia Medical Facility')
 
 @push('styles')
 

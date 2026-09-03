@@ -2,7 +2,7 @@
 
 @section('title', 'Dashboard')
 
-@section('page-title', 'Papua New Guinea Crisis Management Tools')
+@section('page-title', 'Malaysia Crisis Management Tools')
 
 @push('styles')
 
