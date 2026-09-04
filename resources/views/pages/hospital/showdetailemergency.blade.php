@@ -14,6 +14,16 @@
         line-height: 18px;
     }
 
+    .info-modal-tabs .nav-item:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    .info-modal-tabs .nav-link {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px 14px;
+    }
+
      .btn-danger{
         background-color:#395272;
         border-color: transparent;
@@ -753,7 +763,7 @@
 </div>
 
 <div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="level11ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -763,19 +773,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
-          <h6 class="alert-heading fw-bold">Disclaimer</h6>
-          <p class="p-modal mb-2">Malaysia does not use “Health Center” as a separate current national facility grade equivalent to a hospital classification. In the Ministry of Health public system, the principal comprehensive primary-care facility is the Health Clinic – Klinik Kesihatan (KK). Other community primary-care facilities include Rural Clinics (Klinik Desa), Maternal and Child Health Clinics, Community Clinics (Klinik Komuniti), dental clinics, and mobile services.</p>
-          <p class="p-modal mb-0">Public Health Clinics are organized through Ministry of Health administrative, workload, service, infrastructure, and catchment-planning frameworks. Private medical clinics follow a separate statutory framework under the Private Healthcare Facilities and Services Act 1998 [Act 586] and are registered as private medical clinics rather than classified as KK1–KK7.</p>
-        </div>
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="level11Tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-nowrap" id="level11-overview-tab" data-bs-toggle="tab" data-bs-target="#level11-overview" type="button" role="tab" aria-controls="level11-overview" aria-selected="true">Overview</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level11-role-tab" data-bs-toggle="tab" data-bs-target="#level11-role" type="button" role="tab" aria-controls="level11-role" aria-selected="false">Role</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level11-clinical-services-tab" data-bs-toggle="tab" data-bs-target="#level11-clinical-services" type="button" role="tab" aria-controls="level11-clinical-services" aria-selected="false">Clinical Services</button>
+          </li>
+        </ul>
 
-        <h6 class="fw-bold mt-4">Overview</h6>
-        <p class="p-modal">A Health Clinic – Klinik Kesihatan (KK) is a Ministry of Health community-based primary healthcare facility providing first-contact outpatient care, preventive services, continuing treatment, maternal and child healthcare, health promotion, disease-control programs, and referral to hospitals or specialist services when treatment exceeds clinic capability.</p>
-        <p class="p-modal">Health Clinics form the principal comprehensive clinic level of Malaysia's public primary-care network. Their service capacity varies according to patient workload, population served, available medical personnel, infrastructure, diagnostic support, and local healthcare requirements. Larger Health Clinics may provide Family Medicine Specialist services, emergency assessment, laboratory services, radiography, rehabilitation, pharmacy, dental services, and extended maternal-child healthcare, while smaller clinics provide a more limited primary-care package.</p>
-        <p class="p-modal">The Ministry of Health classifies Health Clinics from KK1 to KK7 according to average daily patient attendance. Standard facility planning separately considers the services provided and estimated catchment population. These classifications determine clinic scale and planning requirements; they do not represent hospital grades or inpatient levels.</p>
+        <div class="tab-content pt-4" id="level11TabsContent">
+          <div class="tab-pane fade show active" id="level11-overview" role="tabpanel" aria-labelledby="level11-overview-tab" tabindex="0">
+            <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
+              <h6 class="alert-heading fw-bold">Disclaimer</h6>
+              <p class="p-modal mb-2">Malaysia does not use “Health Center” as a separate current national facility grade equivalent to a hospital classification. In the Ministry of Health public system, the principal comprehensive primary-care facility is the Health Clinic – Klinik Kesihatan (KK). Other community primary-care facilities include Rural Clinics (Klinik Desa), Maternal and Child Health Clinics, Community Clinics (Klinik Komuniti), dental clinics, and mobile services.</p>
+              <p class="p-modal mb-0">Public Health Clinics are organized through Ministry of Health administrative, workload, service, infrastructure, and catchment-planning frameworks. Private medical clinics follow a separate statutory framework under the Private Healthcare Facilities and Services Act 1998 [Act 586] and are registered as private medical clinics rather than classified as KK1–KK7.</p>
+            </div>
+            <p class="p-modal">A Health Clinic – Klinik Kesihatan (KK) is a Ministry of Health community-based primary healthcare facility providing first-contact outpatient care, preventive services, continuing treatment, maternal and child healthcare, health promotion, disease-control programs, and referral to hospitals or specialist services when treatment exceeds clinic capability.</p>
+            <p class="p-modal">Health Clinics form the principal comprehensive clinic level of Malaysia's public primary-care network. Their service capacity varies according to patient workload, population served, available medical personnel, infrastructure, diagnostic support, and local healthcare requirements. Larger Health Clinics may provide Family Medicine Specialist services, emergency assessment, laboratory services, radiography, rehabilitation, pharmacy, dental services, and extended maternal-child healthcare, while smaller clinics provide a more limited primary-care package.</p>
+            <p class="p-modal mb-0">The Ministry of Health classifies Health Clinics from KK1 to KK7 according to average daily patient attendance. Standard facility planning separately considers the services provided and estimated catchment population. These classifications determine clinic scale and planning requirements; they do not represent hospital grades or inpatient levels.</p>
+          </div>
 
-        <h6 class="fw-bold mt-4">Role</h6>
-        <ul class="p-modal">
+          <div class="tab-pane fade" id="level11-role" role="tabpanel" aria-labelledby="level11-role-tab" tabindex="0">
+            <ul class="p-modal mb-0">
           <li>Provide first-contact medical assessment, diagnosis, treatment, monitoring, and follow-up for common illnesses and minor injuries.</li>
           <li>Provide continuing management of chronic and noncommunicable diseases, including diabetes, hypertension, cardiovascular risk conditions, and other priority conditions.</li>
           <li>Deliver maternal, antenatal, postnatal, newborn, child, adolescent, reproductive, adult, elderly, and family-health services.</li>
@@ -784,10 +807,11 @@
           <li>Conduct minor outpatient procedures and basic diagnostic investigations according to clinic capability.</li>
           <li>Coordinate referrals to district, specialist, state, university, or other referral hospitals when patients require inpatient care, surgery, specialist management, advanced diagnostics, or critical care.</li>
           <li>Support community outreach, surveillance, domiciliary services, health education, and population-health programs.</li>
-        </ul>
+            </ul>
+          </div>
 
-        <h6 class="fw-bold mt-4">Clinical Services</h6>
-        <h6 class="mt-3">Approximate Bed Capacity</h6>
+          <div class="tab-pane fade" id="level11-clinical-services" role="tabpanel" aria-labelledby="level11-clinical-services-tab" tabindex="0">
+        <h6>Approximate Bed Capacity</h6>
         <p class="p-modal">Health Clinics generally have no conventional inpatient hospital beds and primarily operate as outpatient and ambulatory primary-care facilities.</p>
         <p class="p-modal">Selected clinics may contain observation areas, sick bays, maternity spaces, or an Alternative Birthing Centre (ABC) according to approved facility plans and local service requirements. Limited observation or maternity beds do not convert a Health Clinic into a secondary-care hospital.</p>
 
@@ -848,6 +872,8 @@
         <div class="alert border-0 border-start border-3 rounded-1 mb-0" role="note" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
           <strong>Note:</strong> The term Health Clinic (Klinik Kesihatan) should be used as the primary English–Malay facility designation in the Malaysia classification. “Health Centre” may appear descriptively or in older material, but it should not be presented as a separate current MOH facility class. KK1–KK7 describe Health Clinic workload and planning scale and must not be interpreted as primary, secondary, or tertiary hospital grades.
         </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -872,7 +898,7 @@
 </div>
 
 <div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -889,7 +915,7 @@
 </div>
 
 <div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="level44ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
          <div class="d-flex align-items-center">
@@ -899,28 +925,42 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
-          <h6 class="alert-heading fw-bold">Disclaimer</h6>
-          <p class="p-modal mb-2">Malaysia’s public primary-care network is classified mainly by facility type, service scope, workload, standard facility plan, and catchment population. The KK1–KK7 classification applies to Ministry of Health Health Clinics and does not represent a hospital grade.</p>
-          <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://hq.moh.gov.my/bpkk/index.php/klasifikasi-klinik-kesihatan" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Health Clinic Classification</a></p>
-        </div>
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="level44Tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-nowrap" id="level44-overview-tab" data-bs-toggle="tab" data-bs-target="#level44-overview" type="button" role="tab" aria-controls="level44-overview" aria-selected="true">Overview</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level44-role-tab" data-bs-toggle="tab" data-bs-target="#level44-role" type="button" role="tab" aria-controls="level44-role" aria-selected="false">Role</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level44-clinical-services-tab" data-bs-toggle="tab" data-bs-target="#level44-clinical-services" type="button" role="tab" aria-controls="level44-clinical-services" aria-selected="false">Clinical Services</button>
+          </li>
+        </ul>
 
-        <h6 class="fw-bold mt-4">Overview</h6>
-        <p class="p-modal">Primary medical facilities provide the main community entry point into Malaysia’s public health system. Health Clinics deliver broad outpatient, maternal-child, emergency, preventive, chronic-disease, pharmacy, laboratory, dental, rehabilitation, and public-health services according to clinic type. Rural Clinics, Maternal and Child Health Clinics, Community Clinics, mobile services, and dental facilities extend access closer to local populations.</p>
-        <p class="p-modal">As of 31 December 2024, the Ministry of Health reported 1,131 Health Clinics, 1,656 Rural Clinics, 77 Maternal and Child Health Clinics, and 205 Community Clinics. Mobile clinic services operated through bus, boat, and helicopter teams.</p>
-        <p class="p-modal"><strong>Note:</strong> Health Clinic classification has two related uses. The workload classification places clinics into KK1–KK7 by average daily attendance. Standard facility planning uses service scope and estimated catchment population. The two approaches support planning and do not create inpatient hospital levels.</p>
+        <div class="tab-content pt-4" id="level44TabsContent">
+          <div class="tab-pane fade show active" id="level44-overview" role="tabpanel" aria-labelledby="level44-overview-tab" tabindex="0">
+            <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
+              <h6 class="alert-heading fw-bold">Disclaimer</h6>
+              <p class="p-modal mb-2">Malaysia’s public primary-care network is classified mainly by facility type, service scope, workload, standard facility plan, and catchment population. The KK1–KK7 classification applies to Ministry of Health Health Clinics and does not represent a hospital grade.</p>
+              <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://hq.moh.gov.my/bpkk/index.php/klasifikasi-klinik-kesihatan" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Health Clinic Classification</a></p>
+            </div>
+            <p class="p-modal">Primary medical facilities provide the main community entry point into Malaysia’s public health system. Health Clinics deliver broad outpatient, maternal-child, emergency, preventive, chronic-disease, pharmacy, laboratory, dental, rehabilitation, and public-health services according to clinic type. Rural Clinics, Maternal and Child Health Clinics, Community Clinics, mobile services, and dental facilities extend access closer to local populations.</p>
+            <p class="p-modal">As of 31 December 2024, the Ministry of Health reported 1,131 Health Clinics, 1,656 Rural Clinics, 77 Maternal and Child Health Clinics, and 205 Community Clinics. Mobile clinic services operated through bus, boat, and helicopter teams.</p>
+            <p class="p-modal mb-0"><strong>Note:</strong> Health Clinic classification has two related uses. The workload classification places clinics into KK1–KK7 by average daily attendance. Standard facility planning uses service scope and estimated catchment population. The two approaches support planning and do not create inpatient hospital levels.</p>
+          </div>
 
-        <h6 class="fw-bold mt-4">Role</h6>
-        <ul class="p-modal">
+          <div class="tab-pane fade" id="level44-role" role="tabpanel" aria-labelledby="level44-role-tab" tabindex="0">
+            <ul class="p-modal mb-0">
           <li>Provide first-contact assessment and treatment for common acute, chronic, communicable, and noncommunicable conditions.</li>
           <li>Deliver maternal, newborn, child, adolescent, reproductive, adult, elderly, disability, and family-health services.</li>
           <li>Provide immunisation, screening, disease prevention, surveillance, health promotion, nutrition, and community outreach.</li>
           <li>Manage hypertension, diabetes, cardiovascular risk, tuberculosis, HIV, mental-health conditions, and other priority programmes according to clinic capability.</li>
           <li>Provide basic emergency response, ambulance coordination, stabilisation, and referral for hospital treatment.</li>
-        </ul>
+            </ul>
+          </div>
 
-        <h6 class="fw-bold mt-4">Clinical Services</h6>
-        <h6 class="mt-3">Approximate Bed Capacity</h6>
+          <div class="tab-pane fade" id="level44-clinical-services" role="tabpanel" aria-labelledby="level44-clinical-services-tab" tabindex="0">
+        <h6>Approximate Bed Capacity</h6>
         <p class="p-modal">Primary-care clinics generally have no regular hospital beds. Most operate as outpatient and ambulatory facilities rather than inpatient hospitals.</p>
         <p class="p-modal">Selected standard clinic plans may include an Alternative Birthing Centre, sick bay, short observation area, or maternity space. These limited beds do not convert the clinic into a secondary hospital.</p>
         <p class="p-modal">Mobile clinics, Rural Clinics, Community Clinics, and routine dental clinics do not operate conventional inpatient wards.</p>
@@ -991,13 +1031,15 @@
         <div class="alert border-0 border-start border-3 rounded-1 mb-0" role="note" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
           <strong>Note:</strong> KK1–KK7 describes clinic workload and planning needs. It should not be translated into primary, secondary, or tertiary hospital classes. A higher-numbered clinic is not necessarily clinically inferior; its scale reflects attendance, catchment, service package, staffing, and local access requirements.
         </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="level55ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1007,27 +1049,41 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
-          <h6 class="alert-heading fw-bold">Disclaimer</h6>
-          <p class="p-modal mb-2">Secondary facilities are described by their hospital-level referral and treatment role. The Ministry of Health administratively separates hospitals with specialists from hospitals without specialists. Hospitals with specialists are further divided into major and minor specialist hospitals for administrative purposes. These categories are not defined by a single bed threshold.</p>
-          <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://www.moh.gov.my/images/04-penerbitan/pelan-strategik/Pelan_Strategik_KKM_compressed.pdf" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Strategic Framework of the Medical Programme 2021–2025</a></p>
-        </div>
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="level55Tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-nowrap" id="level55-overview-tab" data-bs-toggle="tab" data-bs-target="#level55-overview" type="button" role="tab" aria-controls="level55-overview" aria-selected="true">Overview</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level55-role-tab" data-bs-toggle="tab" data-bs-target="#level55-role" type="button" role="tab" aria-controls="level55-role" aria-selected="false">Role</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level55-clinical-service-tab" data-bs-toggle="tab" data-bs-target="#level55-clinical-service" type="button" role="tab" aria-controls="level55-clinical-service" aria-selected="false">Clinical Service</button>
+          </li>
+        </ul>
 
-        <h6 class="fw-bold mt-4">Overview</h6>
-        <p class="p-modal">Secondary medical facilities provide hospital-level emergency, outpatient, inpatient, medical, surgical, maternity, paediatric, diagnostic, rehabilitative, and stabilisation services for state, divisional, district, or multi-district catchments. They receive referrals from health clinics, rural clinics, community clinics, private clinics, pre-hospital services, and smaller hospitals. Complex cases move to a state hospital, major referral centre, special medical institution, or university hospital.</p>
-        <p class="p-modal"><strong>Note:</strong> The boundary between secondary and tertiary care is not rigid. Major specialist hospitals may deliver both levels, while minor specialist hospitals concentrate on core resident specialties. Hospitals without resident specialists provide general hospital care and rely on visiting specialists, hospital clusters, teleconsultation, or upward referral.</p>
+        <div class="tab-content pt-4" id="level55TabsContent">
+          <div class="tab-pane fade show active" id="level55-overview" role="tabpanel" aria-labelledby="level55-overview-tab" tabindex="0">
+            <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
+              <h6 class="alert-heading fw-bold">Disclaimer</h6>
+              <p class="p-modal mb-2">Secondary facilities are described by their hospital-level referral and treatment role. The Ministry of Health administratively separates hospitals with specialists from hospitals without specialists. Hospitals with specialists are further divided into major and minor specialist hospitals for administrative purposes. These categories are not defined by a single bed threshold.</p>
+              <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://www.moh.gov.my/images/04-penerbitan/pelan-strategik/Pelan_Strategik_KKM_compressed.pdf" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Strategic Framework of the Medical Programme 2021–2025</a></p>
+            </div>
+            <p class="p-modal">Secondary medical facilities provide hospital-level emergency, outpatient, inpatient, medical, surgical, maternity, paediatric, diagnostic, rehabilitative, and stabilisation services for state, divisional, district, or multi-district catchments. They receive referrals from health clinics, rural clinics, community clinics, private clinics, pre-hospital services, and smaller hospitals. Complex cases move to a state hospital, major referral centre, special medical institution, or university hospital.</p>
+            <p class="p-modal mb-0"><strong>Note:</strong> The boundary between secondary and tertiary care is not rigid. Major specialist hospitals may deliver both levels, while minor specialist hospitals concentrate on core resident specialties. Hospitals without resident specialists provide general hospital care and rely on visiting specialists, hospital clusters, teleconsultation, or upward referral.</p>
+          </div>
 
-        <h6 class="fw-bold mt-4">Role</h6>
-        <ul class="p-modal">
+          <div class="tab-pane fade" id="level55-role" role="tabpanel" aria-labelledby="level55-role-tab" tabindex="0">
+            <ul class="p-modal mb-0">
           <li>Provide hospital-level referral care for a defined state, district, or multi-district population.</li>
           <li>Manage common and moderately complex medical, surgical, obstetric, paediatric, and emergency conditions.</li>
           <li>Provide inpatient admission, observation, diagnostics, essential surgery, maternity care, rehabilitation, and specialist consultation according to local capability.</li>
           <li>Stabilise critically ill, injured, high-risk obstetric, neonatal, or surgical patients before transfer.</li>
           <li>Support clinical supervision, outreach, referral communication, and service integration with primary-care facilities.</li>
-        </ul>
+            </ul>
+          </div>
 
-        <h6 class="fw-bold mt-4">Clinical Services</h6>
-        <h6 class="mt-3">Approximate Bed Capacity</h6>
+          <div class="tab-pane fade" id="level55-clinical-service" role="tabpanel" aria-labelledby="level55-clinical-service-tab" tabindex="0">
+        <h6>Approximate Bed Capacity</h6>
         <p class="p-modal">There is no fixed administrative threshold. Capacity ranges from small district hospitals with several dozen beds to major specialist hospitals with several hundred beds. Some major specialist hospitals exceed the capacity of smaller state hospitals.</p>
         <p class="p-modal">The Ministry of Health states that major or minor specialist status considers location, physical capacity, population coverage, demographics, and access to specialised care. Bed count alone does not determine the category.</p>
         <p class="p-modal">No current public national register was located that assigns an updated bed total to every hospital together with its major specialist, minor specialist, or non-specialist classification. National totals should not be converted into unsupported class averages.</p>
@@ -1076,13 +1132,15 @@
         <div class="alert border-0 border-start border-3 rounded-1 mb-0" role="note" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
           <strong>Note:</strong> Major specialist and minor specialist are Ministry of Health administrative categories. They should not be presented as universal national grades for university, military, or private hospitals. Current service availability must be verified at facility level because clustering, new specialist appointments, renovations, and equipment readiness can change the operational scope.
         </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="level66ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
     <div class="modal-content">
       <div class="modal-header">
         <div class="d-flex align-items-center">
@@ -1092,28 +1150,43 @@
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
-          <h6 class="alert-heading fw-bold">Disclaimer</h6>
-          <p class="p-modal mb-2">The care-level classifications in this document organise Malaysia’s medical facilities according to clinical capability, referral responsibility, and position in the patient-care pathway. They must be read together with the Ministry of Health administrative hospital categories. State hospital, major specialist hospital, minor specialist hospital, hospital without specialist, and special medical institution are administrative or functional categories; they are not statutory bed grades.</p>
-          <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://www.moh.gov.my/images/04-penerbitan/pelan-strategik/Pelan_Strategik_Bahagian_Perkembangan_Perubatan.pdf" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Specialty &amp; Subspecialty Framework of Ministry of Health Hospitals</a></p>
-        </div>
+        <ul class="nav nav-tabs info-modal-tabs px-3 pt-2 w-100" id="level66Tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active text-nowrap" id="level66-overview-tab" data-bs-toggle="tab" data-bs-target="#level66-overview" type="button" role="tab" aria-controls="level66-overview" aria-selected="true">Overview</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level66-role-tab" data-bs-toggle="tab" data-bs-target="#level66-role" type="button" role="tab" aria-controls="level66-role" aria-selected="false">Role</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link text-nowrap" id="level66-clinical-services-tab" data-bs-toggle="tab" data-bs-target="#level66-clinical-services" type="button" role="tab" aria-controls="level66-clinical-services" aria-selected="false">Clinical Services</button>
+          </li>
+        </ul>
 
-        <h6 class="fw-bold mt-4">Overview</h6>
-        <p class="p-modal">Tertiary medical care forms Malaysia’s highest specialist and subspecialist referral platform. It is concentrated in state hospitals, selected major specialist hospitals, national or regional referral centres, special medical institutions, and university teaching hospitals. These facilities manage complex disease, advanced surgery, critical care, multidisciplinary treatment, and referrals that exceed the capability of district hospitals and primary-care services.</p>
-        <p class="p-modal"><strong>Note:</strong> Tertiary status is determined by actual service capability and referral role rather than the hospital’s administrative label alone. A state hospital normally provides broad tertiary services, but selected major specialist hospitals and special medical institutions may act as national or regional centres for defined disciplines. Hospital clustering allows specialised services to be distributed across nearby hospitals regardless of category.</p>
+        <div class="tab-content pt-4" id="level66TabsContent">
+          <div class="tab-pane fade show active" id="level66-overview" role="tabpanel" aria-labelledby="level66-overview-tab" tabindex="0">
+            <div class="alert border-0 border-start border-3 rounded-1" role="alert" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
+              <h6 class="alert-heading fw-bold">Disclaimer</h6>
+              <p class="p-modal mb-2">The care-level classifications in this document organise Malaysia’s medical facilities according to clinical capability, referral responsibility, and position in the patient-care pathway. They must be read together with the Ministry of Health administrative hospital categories. State hospital, major specialist hospital, minor specialist hospital, hospital without specialist, and special medical institution are administrative or functional categories; they are not statutory bed grades.</p>
+              <p class="p-modal mb-0"><strong>Source:</strong> <a href="https://www.moh.gov.my/images/04-penerbitan/pelan-strategik/Pelan_Strategik_Bahagian_Perkembangan_Perubatan.pdf" class="text-primary" target="_blank" rel="noopener noreferrer">Malaysia Ministry of Health: Specialty &amp; Subspecialty Framework of Ministry of Health Hospitals</a></p>
+            </div>
 
-        <h6 class="fw-bold mt-4">Role</h6>
-        <ul class="p-modal">
+            <p class="p-modal">Tertiary medical care forms Malaysia’s highest specialist and subspecialist referral platform. It is concentrated in state hospitals, selected major specialist hospitals, national or regional referral centres, special medical institutions, and university teaching hospitals. These facilities manage complex disease, advanced surgery, critical care, multidisciplinary treatment, and referrals that exceed the capability of district hospitals and primary-care services.</p>
+            <p class="p-modal mb-0"><strong>Note:</strong> Tertiary status is determined by actual service capability and referral role rather than the hospital’s administrative label alone. A state hospital normally provides broad tertiary services, but selected major specialist hospitals and special medical institutions may act as national or regional centres for defined disciplines. Hospital clustering allows specialised services to be distributed across nearby hospitals regardless of category.</p>
+          </div>
+
+          <div class="tab-pane fade" id="level66-role" role="tabpanel" aria-labelledby="level66-role-tab" tabindex="0">
+            <ul class="p-modal mb-0">
           <li>Provide national, state, or regional referral care for complex, severe, high-risk, and uncommon conditions.</li>
           <li>Receive referrals from specialist hospitals, non-specialist hospitals, health clinics, private providers, ambulance services, and direct emergency presentation.</li>
           <li>Deliver advanced medical, surgical, obstetric, paediatric, neonatal, diagnostic, intensive-care, rehabilitative, and palliative services.</li>
           <li>Coordinate multidisciplinary treatment, subspecialist consultation, advanced diagnostics, and long-term follow-up.</li>
           <li>Support teaching, specialist training, clinical research, national protocols, and service-development programmes.</li>
           <li>Refer selected patients abroad or to another national centre when a required procedure or subspecialty is unavailable locally.</li>
-        </ul>
+            </ul>
+          </div>
 
-        <h6 class="fw-bold mt-4">Clinical Services</h6>
-        <h6 class="mt-3">Approximate Bed Capacity</h6>
+          <div class="tab-pane fade" id="level66-clinical-services" role="tabpanel" aria-labelledby="level66-clinical-services-tab" tabindex="0">
+        <h6>Approximate Bed Capacity</h6>
         <p class="p-modal">There is no fixed tertiary threshold. Large tertiary referral hospitals commonly operate several hundred beds. Hospital Kuala Lumpur reports more than 2,300 patient beds and functions as a national referral centre for multiple specialties and subspecialties.</p>
         <p class="p-modal">Special medical institutions vary substantially. Some operate large inpatient services, while others focus on a defined national function and may have limited beds or no conventional inpatient bed base.</p>
         <p class="p-modal">As of 31 December 2024, the Ministry of Health reported 41,209 official beds across 139 hospitals and 5,646 beds across 11 special medical institutions. The published national total is not broken down by state, major specialist, minor specialist, and non-specialist administrative class.</p>
@@ -1165,6 +1238,8 @@
 
         <div class="alert border-0 border-start border-3 rounded-1 mb-0" role="note" style="background-color: #eef2f6; border-left-color: #536f91 !important; color: #4f5f72;">
           <strong>Note:</strong> Malaysia’s tertiary network is distributed. Hospital Kuala Lumpur is the largest Ministry of Health hospital and a major national referral centre, but it is not the single gateway for all tertiary care. State hospitals, major specialist hospitals, special institutions, university hospitals, and regional centres share national and regional referral responsibilities.
+        </div>
+          </div>
         </div>
       </div>
     </div>
